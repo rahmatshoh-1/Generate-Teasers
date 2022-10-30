@@ -8,9 +8,9 @@ btnGenerate = document.querySelector('.btnGenerate'),
 	   text = document.querySelector('.text')
 
 // Our arrays
-partBody    = ['Рука','нога','голова','волосы'],
-adjactives  = ['Огромный','маленький','красивый','уродливый'],
-animals     = ['тигр','собака','слон','кошка','льва'],
+partBody    = ['рука','нога','голова','волосы'],
+adjactives  = ['огромнная','маленькая','красивая','уродливая'],
+animals     = ['тигр','собаки','слона','кошки','льва'],
 alimalsBody = ['лапа','башка','левая лапа','усик']
 
 
