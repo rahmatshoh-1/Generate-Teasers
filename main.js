@@ -1,33 +1,26 @@
 // Our variables 
-let btnGenerate,   text,partBody,     adjactives,animals,
-	alimalsBody,   randomPartBody,    randomAdjactives,
-	randomAnimals, randomAlimalsBody, result
+let randomAnimals,  randomAlimalsBody, randomAdjactives,
+	btnGenerate, 	randomPartBody,    text, result
 
 // call classes from doc HTML
 btnGenerate = document.querySelector('.btnGenerate'),
 	   text = document.querySelector('.text')
 
+// generateRandomWords from arrays
+const generateRandomWords = (arr) => {
+	return arr[Math.floor(Math.random() * arr.length)]
+}
+// create generateDroznilok function
+const generateDroznilok = () => {
 // Our arrays
-partBody    = ['рука','нога','голова','волосы'],
-adjactives  = ['огромнная','маленькая','красивая','уродливая'],
-animals     = ['тигра','собаки','слона','кошки','льва'],
-alimalsBody = ['лапа','башка','левая лапа','усик']
-
-
-function generateDroznilok() {
-	// partBody random
-	randomPartBody = partBody[Math.floor(Math.random() * partBody.length)]
-	// adjactives random
-	randomAdjactives = adjactives[Math.floor(Math.random() * adjactives.length)]
-	// animals random
-	randomAnimals = animals[Math.floor(Math.random() * animals.length)]
-	// alimalsBody random
-	randomAlimalsBody = alimalsBody[Math.floor(Math.random() * alimalsBody.length)]
-	// result
-	result = "У тебя "+ randomPartBody +" еще более "+ randomAdjactives + ", чем "+ randomAlimalsBody +' у '+ randomAnimals
-	// add result to paragraph text
+	randomPartBody    = ['рука','нога','голова','волосы','глаза','нос','череп'],
+	randomAdjactives  = ['огромнная','маленькая','красивая','уродливая','вонючая','унылая','дурацкая'],
+	randomAlimalsBody = ['лапа','башка','левая лапа','усик']
+	randomAnimals     = ['тигра','собаки','слона','кошки','льва'],
+// result
+	result = ["У тебя ", generateRandomWords(randomPartBody)," еще более ", generateRandomWords(randomAdjactives)+",чем ",generateRandomWords(randomAlimalsBody),' у ',generateRandomWords(randomAnimals)].join(" ")
+// add result to paragraph text
 	text.innerText = result
 }
 // Generate Start
 btnGenerate.addEventListener("click",() => generateDroznilok())
-
